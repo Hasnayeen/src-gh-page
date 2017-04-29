@@ -1,0 +1,20 @@
+.experience {
+}
+
+.experience-content {
+    padding: 5%;
+}
+
+.experience-left {
+    float: left;
+    width: 50%;
+    background-color: #f8f8f8;
+    color: #080808;
+}
+
+.experience-right {
+    float: right;
+    width: 50%;
+    background-color: #080808;
+    color: #f8f8f8;
+}

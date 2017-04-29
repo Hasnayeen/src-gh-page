@@ -17,7 +17,7 @@
     {
         "step": 4,
         "name": "Database",
-        "desc": "I primarily use mariadb for database and redis for fast data storage. I've also used postgresql and mongodb for a brief amount of time. I've little experience with graph database orientdb."
+        "desc": "I primarily use mariadb for database and redis for fast data storage. I've briefly used postgresql and mongodb. I've also played with graph database orientdb."
     },
     {
         "step": 5,
@@ -27,12 +27,12 @@
     {
         "step": 6,
         "name": "Deployment",
-        "desc": "I've manually deployed & maintained application before, but now I use docker tools (portainer, docker swarm) for deployment."
+        "desc": "I've manually deployed & maintained application before, but now I use docker tools (portainer, docker swarm) for deployment and looking into RancherOS."
     },
     {
         "step": 7,
         "name": "Server",
-        "desc": "I use nginx as a http server, previously used apache. I've used AWS(EC2,S3,RDS) at my workplace, but personally I use DigitalOcean service."
+        "desc": "I use nginx as a http server, previously used apache. I've used AWS (EC2,S3,RDS) services at my workplace, but personally I use DigitalOcean service."
     },
     {
         "step": 8,
