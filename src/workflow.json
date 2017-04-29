@@ -2,12 +2,12 @@
     {
         "step": 1,
         "name": "OS",
-        "desc": "I work on linux operating system (usually ubuntu). Previously I used vagrant for development task but now docker is my preferable tool for development."
+        "desc": "I work on linux operating system (usually ubuntu). Used vagrant before but now docker is my preferable tool for local development environment."
     },
     {
         "step": 2,
         "name": "Language",
-        "desc": "Primarily I work with PHP most of the time, but I use python for scraping and other automating task. I occasionally hack on rust and elixir."
+        "desc": "Primarily I work with PHP most of the time, but I use python for scraping and automating tedious task. I occasionally hack on rust and elixir."
     },
     {
         "step": 3,

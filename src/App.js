@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Header';
 import Workflow from './Components/Workflow';
 import Experience from './Components/Experience';
+import Roadmap from './Components/Roadmap';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <Header />
         <Workflow />
         <Experience />
+        <Roadmap />
       </div>
     );
   }
