@@ -1,0 +1,47 @@
+[
+    {
+        "step": 1,
+        "name": "OS",
+        "desc": "I work on linux operating system (usually ubuntu). Previously I used vagrant for development task but now docker is my preferable tool for development."
+    },
+    {
+        "step": 2,
+        "name": "Language",
+        "desc": "Primarily I work with PHP most of the time, but I use python for scraping and other automating task. I occasionally hack on rust and elixir."
+    },
+    {
+        "step": 3,
+        "name": "Framework",
+        "desc": "Laravel is my go to framework for rapid prototyping. I also use vue and react as a view framework. I've also used meteor framework very briefly."
+    },
+    {
+        "step": 4,
+        "name": "Database",
+        "desc": "I primarily use mariadb for database and redis for fast data storage. I've also used postgresql and mongodb for a brief amount of time. I've little experience with graph database orientdb."
+    },
+    {
+        "step": 5,
+        "name": "Monitoring",
+        "desc": "I use self-hosted sentry for error tracking. I've also used percona monitoring and management tool for mysql database performance monitoring in professional work."
+    },
+    {
+        "step": 6,
+        "name": "Deployment",
+        "desc": "I've manually deployed & maintained application before, but now I use docker tools (portainer, docker swarm) for deployment."
+    },
+    {
+        "step": 7,
+        "name": "Server",
+        "desc": "I use nginx as a http server, previously used apache. I've used AWS(EC2,S3,RDS) at my workplace, but personally I use DigitalOcean service."
+    },
+    {
+        "step": 8,
+        "name": "Testing",
+        "desc": "I try to follow TDD most of the time, phpunit for unit testing in php and behat for BDD. Recently started using chromedriver for automated browser testing."
+    },
+    {
+        "step": 9,
+        "name": "Tools",
+        "desc": "I use git for version controlling. I use TravisCI and StyleCI service for continuous integration. Sublime Text is my primary editor and learning vim."
+    }
+]

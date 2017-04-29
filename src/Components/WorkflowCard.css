@@ -1,0 +1,29 @@
+.flow-card {
+  width: 20em;
+  margin: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: #ffffff;
+  min-height: 60px;
+}
+
+.flow-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.flow-text {
+  color: #444444;
+}
+
+.flow-name {
+  align-items: center;
+  font-size: 1em;
+  color: #000;
+  padding-bottom: .75em;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.flow-description {
+  text-align: justify;
+  padding: 1rem;
+}
