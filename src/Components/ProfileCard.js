@@ -23,8 +23,8 @@ export default class ProfileCard extends Component {
                     </p>
                     <p>
                         <i className="fa fa-github"></i>
-                        <a className="social-link" href="https://github.com/iluminar">
-                            iluminar
+                        <a className="social-link" href="https://github.com/hasnayeen">
+                            hasnayeen
                         </a>
                     </p>
                     <p>
