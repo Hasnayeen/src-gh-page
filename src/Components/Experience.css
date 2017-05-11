@@ -1,16 +1,25 @@
+.experience {
+    background-color: #ff7f7e;
+    padding: 2rem 8.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    clear: both;
+}
+
 .experience-content {
-    padding: 5% 15%;
+    padding: 2%;
 }
 
 .experience-left {
-    float: left;
     width: 50%;
     background-color: #f8f8f8;
     color: #080808;
 }
 
 .experience-right {
-    float: right;
     width: 50%;
     background-color: #080808;
     color: #f8f8f8;

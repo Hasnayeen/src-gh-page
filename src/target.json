@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "description": "Get experienced with docker swarm",
+        "completed": false
+    },
+    {
+        "id": 2,
+        "description": "Get familiar with RancherOS",
+        "completed": false
+    },
+    {
+        "id": 3,
+        "description": "Build an app with electron",
+        "completed": false
+    },
+    {
+        "id": 4,
+        "description": "Use rethinkdb for real time app",
+        "completed": false
+    },
+    {
+        "id": 5,
+        "description": "Learn about asynchronous i/o",
+        "completed": false
+    },
+    {
+        "id": 6,
+        "description": "Run application in AWS Lambda",
+        "completed": false
+    },
+    {
+        "id": 7,
+        "description": "Learn functional programming concept",
+        "completed": false
+    },
+    {
+        "id": 8,
+        "description": "Build simple project with elixir",
+        "completed": false
+    },
+    {
+        "id": 9,
+        "description": "Build simple project with rust",
+        "completed": false
+    }
+]

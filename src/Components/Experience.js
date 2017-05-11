@@ -8,7 +8,7 @@ export default class Experience extends Component {
                 <div className="experience-left">
                     <div className="experience-content">
                         <h2>Software Engineer</h2>
-                        <h3>P1, EWMGL, Bashundhara Group</h3>
+                        <h3>P1, EWMGL</h3>
                         <h4>Jan, 2016 - May, 2017</h4>
                         <h5>Building and maintaining an API microservice for media management to serve several web and mobile application frontend.</h5>
                     </div>
