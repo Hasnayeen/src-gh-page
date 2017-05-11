@@ -1,15 +1,21 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import './Roadmap.css';
-import data from './../target.json';
 
 export default class Roadmap extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {targets: []};
+        this.componentDidMount = this.componentDidMount.bind(this);
+    }
+
     render() {
         return (
             <div className="roadmap">
                 <div className="roadmap-card">
                     <h1 className="roadmap-heading">Target 2017</h1>
                     <ul className="list">
-                        {data.map((item) => 
+                        {this.state.targets.map((item) => 
                             <li key={item.id}><input type="checkbox" checked={item.completed}  />
                             <label>{item.description}</label></li>
                             )}
@@ -17,5 +23,15 @@ export default class Roadmap extends Component {
                 </div>
             </div>
         );
+    }
+
+    componentDidMount() {
+        axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/master/data/target.json')
+            .then((response) => {
+                this.setState({targets: response.data});
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 }

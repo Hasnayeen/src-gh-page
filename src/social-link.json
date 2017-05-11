@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "url": "mailto:searching.nehal@gmail.com",
+        "username": "searching.nehal@gmail.com",
+        "medium": "email",
+        "icon": "fa fa-envelope"
+    },
+    {
+        "id": 2,
+        "url": "https://hasnayeen.github.io",
+        "username": "hasnayeen.github.io",
+        "medium": "github-page",
+        "icon": "fa fa-link"
+    },
+    {
+        "id": 3,
+        "url": "https://github.com/hasnayeen",
+        "username": "hasnayeen",
+        "medium": "github",
+        "icon": "fa fa-github"
+    },
+    {
+        "id": 4,
+        "url": "http://stackoverflow.com/users/4017672/nehal-hasnayeen",
+        "username": "users/4017672",
+        "medium": "stackoverflow",
+        "icon": "fa fa-stack-overflow"
+    },
+    {
+        "id": 5,
+        "url": "https://twitter.com/nhasnayeen",
+        "username": "nhasnayeen",
+        "medium": "twitter",
+        "icon": "fa fa-twitter"
+    },
+    {
+        "id": 6,
+        "url": "https://medium.com/@searching.nehal",
+        "username": "@searching.nehal",
+        "medium": "medium",
+        "icon": "fa fa-medium"
+    }
+]
