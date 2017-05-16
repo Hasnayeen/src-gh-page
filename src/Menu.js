@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import './Menu.css';
 
 export default class Menu extends Component {
@@ -23,10 +24,10 @@ export default class Menu extends Component {
                 </div>
                 <ul className="menu-links" style={this.state.style}>
                     <li>
-                        <a href="/">HOME</a>
+                        <Link to="/">HOME</Link>
                     </li>
                     <li>
-                        <a href="blog">BLOG</a>
+                        <Link to="blog">BLOG</Link>
                     </li>
                 </ul>
             </div>
