@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './ProfileCard.css';
-import pic from '../square.jpg';
+import pic from '../../../square.jpg';
 
 export default class ProfileCard extends Component {
     constructor(props) {
