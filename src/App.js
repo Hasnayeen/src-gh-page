@@ -6,6 +6,7 @@ import {
 import axios from 'axios';
 import './App.css';
 import Home from './Pages/Home/Home';
+import Posts from './Pages/Posts/Posts';
 import About from './Pages/About/About';
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Home} />
           <Route path="/About" component={About} />
+          <Route path="/Posts" component={Posts} />
         </div>
       </Router>
     );
@@ -39,6 +41,7 @@ class App extends Component {
         this.setState({images: response.data});
         this.setState({ current: this.randomIntFromInterval(this.state.images.length)});
         this.setImage();
+        this.rotateImage();
       })
       .catch((error) => {
         console.log(error);
@@ -47,6 +50,17 @@ class App extends Component {
 
   componentWillUnmount() {
     document.body.removeEventListener('keyup', this.shortcutKey);
+    clearInterval(this.timerID);
+  }
+
+  rotateImage() {
+    this.timerID = setInterval(
+      () => {
+        this.setState({ current: this.state.current + 1 });
+        this.setImage();
+      },
+      120000
+    );
   }
 
   shortcutKey(e) {
@@ -56,9 +70,12 @@ class App extends Component {
         this.setImage()
         break;
         
-        case 37:
+      case 37:
         this.setState({ current: this.state.current - 1})
         this.setImage()
+        break;
+
+      default:
         break;
     }
   }
@@ -74,7 +91,7 @@ class App extends Component {
       this.setState({current: this.state.images.length});
     }
     document.body.style.backgroundImage = "url('" + this.state.images[this.state.current].urls.raw + "')";
-    document.getElementById('photographer').setAttribute('href', this.state.images[this.state.current].user.links.html);
+    document.getElementById('photographer').setAttribute('href', this.state.images[this.state.current].user.links.html + "?utm_source=nehal_personal_website&utm_medium=referral");
     document.getElementById('photographer').textContent = this.state.images[this.state.current].user.name;
   }
 }

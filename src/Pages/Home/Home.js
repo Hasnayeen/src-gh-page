@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -33,7 +34,7 @@ export default class Home extends Component {
                     <div className="w-full pt-8 border-t border-red-lightest">
                         <div className="text-sm pb-2 font-thin text-grey-darker">
                             Posts
-                        <a href="" className="float-right no-underline text-blue hover:font-semibold">See All</a>
+                        <Link to="/posts" className="float-right no-underline text-blue hover:font-semibold">See All</Link>
                         </div>
                         {this.state.posts.map((post, i=1) => {
                             i++;

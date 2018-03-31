@@ -20,9 +20,6 @@ export default class About extends Component {
                     </Link>
                     <div className="py-8 text-center">A full-stack developer from <span className="text-orange">Dhaka, Bangladesh</span> writing code for food.</div>
                 </div>
-                <div className="text-white text-sm mt-8 p-2 bg-black opacity-50 rounded">Photo by
-                    <a className="text-white no-underline font-semibold" href="https://unsplash.com/@aperturevintage" > Aperture Vintage</a> on <a className="text-white no-underline font-semibold" href="https://unsplash.com/" >Unsplash</a>
-                </div>
             </div>
         )
     }
