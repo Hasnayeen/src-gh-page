@@ -7,6 +7,7 @@ import axios from 'axios';
 import './App.css';
 import Home from './Pages/Home/Home';
 import Posts from './Pages/Posts/Posts';
+import Projects from './Pages/Projects/Projects';
 import About from './Pages/About/About';
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/About" component={About} />
           <Route path="/Posts" component={Posts} />
+          <Route path="/Projects" component={Projects} />
         </div>
       </Router>
     );

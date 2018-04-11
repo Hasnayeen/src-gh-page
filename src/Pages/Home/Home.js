@@ -46,7 +46,7 @@ export default class Home extends Component {
                     <div className="w-full pt-8 border-t border-red-lightest">
                         <div className="text-sm pb-2 font-thin text-grey-darker">
                             Projects
-                                <a href="" className="float-right no-underline text-blue hover:font-semibold">See All</a>
+                            <Link to="/projects" className="float-right no-underline text-blue hover:font-semibold">See All</Link>
                         </div>
                         {this.state.projects.map((project, i = 1) => {
                             i++;

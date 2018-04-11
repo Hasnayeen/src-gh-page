@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Post from './Components/Post';
 
-export default class Blog extends Component {
+export default class Posts extends Component {
     constructor(props) {
         super(props);
         this.state = {posts: []};
@@ -33,8 +33,7 @@ export default class Blog extends Component {
         axios.get('https://bbgz75j470.execute-api.us-east-1.amazonaws.com/prod/posts')
             .then((response) => {
                 var resp = JSON.parse(response.data.body);
-                var posts = [];
-                Object.keys(resp).map((key) => {
+                var posts = Object.keys(resp).map((key) => {
                     let date = new Date(resp[key].firstPublishedAt);
                     let item = {
                         id: resp[key].id,
@@ -43,7 +42,7 @@ export default class Blog extends Component {
                         date: date.toLocaleString('en-us', { month: 'long' }) + ' ' + date.getDate() + ',' + date.getFullYear(),
                         published: resp[key].firstPublishedAt
                     };
-                    posts.push(item);
+                    return item;
                 })
                 posts.sort((a, b) => {
                     if (a.published > b.published) return -1;
