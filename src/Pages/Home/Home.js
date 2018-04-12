@@ -29,7 +29,7 @@ export default class Home extends Component {
                         <a href="" className="border-l border-red-lightest py-4"></a>
                         <a href="" className="no-underline text-grey-darker py-4 hover:border-orange-dark border-b border-transparent">Books</a>
                         <a href="" className="border-r border-red-lightest py-4"></a>
-                        <a href="" className="no-underline text-grey-darker py-4 hover:border-orange-dark border-b border-transparent">Now</a>
+                        <Link to="/now" className="no-underline text-grey-darker py-4 hover:border-orange-dark border-b border-transparent">Now</Link>
                     </div>
                     <div className="w-full pt-8 border-t border-red-lightest">
                         <div className="text-sm pb-2 font-thin text-grey-darker">

@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home';
 import Posts from './Pages/Posts/Posts';
 import Projects from './Pages/Projects/Projects';
 import About from './Pages/About/About';
+import Now from './Pages/Now/Now';
 
 class App extends Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Home} />
           <Route path="/About" component={About} />
+          <Route path="/Now" component={Now} />
           <Route path="/Posts" component={Posts} />
           <Route path="/Projects" component={Projects} />
         </div>
@@ -37,7 +39,7 @@ class App extends Component {
 
   componentWillMount = () => {
     axios({
-      url: 'https://9x9ol3owx7.execute-api.us-east-1.amazonaws.com/prod/images',
+      // url: 'https://9x9ol3owx7.execute-api.us-east-1.amazonaws.com/prod/images',
     })
       .then((response) => {
         this.setState({images: response.data});

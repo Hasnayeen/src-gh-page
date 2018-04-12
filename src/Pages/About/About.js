@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 export default class About extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { posts: [], projects: [] };
-    }
-
     render() {
         return (
             <div className="w-full lg:w-3/4 mx-auto flex flex-col justify-center items-center mb-8">
