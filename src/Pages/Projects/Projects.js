@@ -4,10 +4,6 @@ import axios from 'axios';
 import Project from './Components/Project';
 
 export default class Projects extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { projects: [] };
-    }
     render() {
         return (
             <div className="w-full lg:w-3/4 mx-auto flex flex-col justify-center items-center mb-8">
@@ -21,7 +17,7 @@ export default class Projects extends Component {
                             All Projects
                         </div>
                     </div>
-                    {this.state.projects.map((project) =>
+                    {window.data.projects.map((project) =>
                         <Project key={project.step} project={project} />
                     )}
                 </div>
@@ -30,29 +26,15 @@ export default class Projects extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/master/data/projects.json')
-            .then((response) => {
-                // var resp = JSON.parse(response.data.body);
-                // var projects = Object.keys(resp).map((key) => {
-                //     let date = new Date(resp[key].firstPublishedAt);
-                //     let item = {
-                //         id: resp[key].id,
-                //         title: resp[key].title,
-                //         slug: resp[key].uniqueSlug,
-                //         date: date.toLocaleString('en-us', { month: 'long' }) + ' ' + date.getDate() + ',' + date.getFullYear(),
-                //         published: resp[key].firstPublishedAt
-                //     };
-                //     return item;
-                // })
-                // posts.sort((a, b) => {
-                //     if (a.published > b.published) return -1;
-                //     if (a.published < b.published) return 1;
-                //     return 0;
-                // })
-                this.setState({ projects: response.data });
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+        if (window.data.projects.length < 1) {
+            axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/master/data/projects.json')
+                .then((response) => {
+                    window.data.projects = response.data;
+                    this.forceUpdate();
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+        }
     }
 }

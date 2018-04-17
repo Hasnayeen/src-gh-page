@@ -4,10 +4,6 @@ import axios from 'axios';
 import Post from './Components/Post';
 
 export default class Posts extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {posts: []};
-    }
     render() {
         return (
             <div className="w-full lg:w-3/4 mx-auto flex flex-col justify-center items-center mb-8">
@@ -21,7 +17,7 @@ export default class Posts extends Component {
                             All Posts
                         </div>
                     </div>
-                    {this.state.posts.map((post) => 
+                    {window.data.posts.map((post) => 
                         <Post key={post.id} post={post} />
                     )}
                 </div>
@@ -30,29 +26,31 @@ export default class Posts extends Component {
     }
 
     componentDidMount () {
-        axios.get('https://bbgz75j470.execute-api.us-east-1.amazonaws.com/prod/posts')
-            .then((response) => {
-                var resp = JSON.parse(response.data.body);
-                var posts = Object.keys(resp).map((key) => {
-                    let date = new Date(resp[key].firstPublishedAt);
-                    let item = {
-                        id: resp[key].id,
-                        title: resp[key].title,
-                        slug: resp[key].uniqueSlug,
-                        date: date.toLocaleString('en-us', { month: 'long' }) + ' ' + date.getDate() + ',' + date.getFullYear(),
-                        published: resp[key].firstPublishedAt
-                    };
-                    return item;
+        if (window.data.posts.length < 1) {
+            axios.get('https://bbgz75j470.execute-api.us-east-1.amazonaws.com/prod/posts')
+                .then((response) => {
+                    var resp = JSON.parse(response.data.body);
+                    window.data.posts = Object.keys(resp).map((key) => {
+                        let date = new Date(resp[key].firstPublishedAt);
+                        let item = {
+                            id: resp[key].id,
+                            title: resp[key].title,
+                            slug: resp[key].uniqueSlug,
+                            date: date.toLocaleString('en-us', { month: 'long' }) + ' ' + date.getDate() + ',' + date.getFullYear(),
+                            published: resp[key].firstPublishedAt
+                        };
+                        return item;
+                    })
+                    window.data.posts.sort((a, b) => {
+                        if (a.published > b.published) return -1;
+                        if (a.published < b.published) return 1;
+                        return 0;
+                    })
+                    this.forceUpdate();
                 })
-                posts.sort((a, b) => {
-                    if (a.published > b.published) return -1;
-                    if (a.published < b.published) return 1;
-                    return 0;
-                })
-                this.setState({posts: posts});
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
     }
 }

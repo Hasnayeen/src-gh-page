@@ -10,6 +10,7 @@ import Posts from './Pages/Posts/Posts';
 import Projects from './Pages/Projects/Projects';
 import About from './Pages/About/About';
 import Now from './Pages/Now/Now';
+import Reading from './Pages/Reading/Reading';
 
 class App extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class App extends Component {
           <Route path="/Now" component={Now} />
           <Route path="/Posts" component={Posts} />
           <Route path="/Projects" component={Projects} />
+          <Route path="/Reading" component={Reading} />
         </div>
       </Router>
     );
@@ -48,7 +50,9 @@ class App extends Component {
         this.rotateImage();
       })
       .catch((error) => {
-        console.log(error);
+        document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1469521669194-babb45599def?ixlib=rb-0.3.5&s=e47c3e84d7dea5c93d2a5dfc35e45189&auto=format&fit=crop&w=1951&q=80')";
+        document.getElementById('photographer').setAttribute('href', 'https://unsplash.com/@samscrim');
+        document.getElementById('photographer').textContent = "Samuel Scrimshaw";
       })
   }
 

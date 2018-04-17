@@ -10,7 +10,7 @@ import pic from '../../logo.png';
 export default class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = { posts: [], projects: [] };
+        this.state = { posts: [] };
     }
 
     render() {
@@ -22,12 +22,15 @@ export default class Home extends Component {
                     <div className="text-orange-light lg:text-2xl text-2xl py-4 uppercase tracking-wide text-center">
                         Nehal <span className="pl-2">Hasnayeen</span>
                     </div>
-                    <div className="pb-8 text-center">A full-stack developer from <span className="text-orange">Dhaka, Bangladesh</span> writing code for food.</div>
+                    <div className="pb-8 text-center">
+                        A full-stack developer from <span className="text-orange">Dhaka, Bangladesh</span> writing code for food.
+                        <Link to="/about" className="no-underline text-blue-light" > Learn more →</Link>
+                    </div>
                     <SocialLinks></SocialLinks>
                     <div className="flex flex-row justify-around bg-grey-lightest px-8 w-full border-t border-red-lightest">
-                        <Link to="about" className="no-underline text-grey-darker py-4 hover:border-orange-dark border-b border-transparent">About</Link>
+                        <Link to="/about" className="no-underline text-grey-darker py-4 hover:border-orange-dark border-b border-transparent">About</Link>
                         <a href="" className="border-l border-red-lightest py-4"></a>
-                        <a href="" className="no-underline text-grey-darker py-4 hover:border-orange-dark border-b border-transparent">Books</a>
+                        <Link to="/reading" className="no-underline text-grey-darker py-4 hover:border-orange-dark border-b border-transparent">Reading</Link>
                         <a href="" className="border-r border-red-lightest py-4"></a>
                         <Link to="/now" className="no-underline text-grey-darker py-4 hover:border-orange-dark border-b border-transparent">Now</Link>
                     </div>
@@ -36,7 +39,7 @@ export default class Home extends Component {
                             Posts
                         <Link to="/posts" className="float-right no-underline text-blue hover:font-semibold">See All</Link>
                         </div>
-                        {this.state.posts.map((post, i=1) => {
+                        {window.data.blog.map((post, i=1) => {
                             i++;
                             if (i < 3) {
                                 return <Post key={post.id} post={post} />;
@@ -48,7 +51,7 @@ export default class Home extends Component {
                             Projects
                             <Link to="/projects" className="float-right no-underline text-blue hover:font-semibold">See All</Link>
                         </div>
-                        {this.state.projects.map((project, i = 1) => {
+                        {window.data.projects.map((project, i = 1) => {
                             i++;
                             if (i < 3) {
                                 return <Project key={project.step} project={project} />;
@@ -60,20 +63,26 @@ export default class Home extends Component {
         );
     }
 
-    componentDidMount() {
-        axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/master/data/blog.json')
-            .then((response) => {
-                this.setState({ posts: response.data.reverse() });
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-        axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/master/data/projects.json')
-            .then((response) => {
-                this.setState({ projects: response.data });
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+    componentWillMount() {
+        if (window.data.blog.length < 1) {
+            axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/master/data/blog.json')
+                .then((response) => {
+                    window.data.blog = response.data.reverse();
+                    this.forceUpdate();
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
+        if (window.data.projects.length < 1) {
+            axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/master/data/projects.json')
+                .then((response) => {
+                    window.data.projects = response.data;
+                    this.forceUpdate();
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+        }
     }
 }

@@ -27,7 +27,7 @@ export default class About extends Component {
                     </div>
                     <div className="py-3 text-grey-darker">
                         I work on both backend (php7) and frontend (es6) mainly on Laravel & Vue/React stack. I follow TDD approach on both end for professional work. I use linux machine and docker based
-                        tools for local development and production.
+                        tools for local development and production. <a href="/projects" className="no-underline text-blue-light">Projects</a>
                     </div>
                     <div className="py-3 text-grey-darker">
                         I like to learn new stuff & experiment. I'm exploring golang, graphql and serverless technology and looking forward to learn React Native.
@@ -37,8 +37,44 @@ export default class About extends Component {
                         Approach to Work
                     </div>
                     <div className="py-3 text-grey-darker">
-                        I prefer simple & minimum approach to problem and build solution that is easily understandable & requires minimum amount of code. I don't like over engineering problem 
-                        though I often refactor code to make it more maintainable. Code readibility and easy maintenance is the primary goal when I'm writing code.
+                        I try to build simple & minimum solution that is easily understandable & requires minimum amount of code.
+                    </div>
+                    <div className="py-3 text-grey-darker">
+                        I prefer -
+                        <ul>
+                            <li>
+                                usability over innovation
+                            </li>
+                            <li>
+                                code readibility over performance
+                            </li>
+                            <li>
+                                creative freedom in work
+                            </li>
+                            <li>
+                                transparent open discussion over rigid behind the door decision
+                            </li>
+                            <li>
+                                early user feedback over feature perfection and project completion
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="py-3 text-grey-darker">
+                        I don't like -
+                        <ul>
+                            <li>
+                                meetings and manager/delegator
+                            </li>
+                            <li>
+                                bureaucracy, long unnecessary process/formalities, policies (overreaction to situation)
+                            </li>
+                            <li>
+                                four letter words, ["easy", "need", "can't", "just", "only", "ASAP"]
+                            </li>
+                            <li>
+                                vague "estimation" (guesstimation)
+                            </li>
+                        </ul>
                     </div>
                     <div className="pt-4 text-left text-xl text-grey-darker font-medium">
                         Work Timeline
@@ -60,6 +96,12 @@ export default class About extends Component {
                     </div>
                     <div className="py-3 text-grey-darker">
                         <span className="font-bold text-grey-darker text-lg">→</span> 2018: Exploring golang, graphql and aws lambda (serverless tech).
+                    </div>
+                    <div className="pt-8 mt-4 text-left text-xl text-grey-darker font-medium">
+                        Personal
+                    </div>
+                    <div className="py-3 text-grey-darker">
+                        I like to read non-fictional books (<Link to="/reading" className="no-underline text-blue-light">Check my reading list</Link>). I like to cook and experiment with new recipes. I like seeing new places, but because I can't tarvel much so I see places of natural beauty all over the world through other people eyes (travel videos).
                     </div>
                 </div>
             </div>
