@@ -8,11 +8,6 @@ import SocialLinks from "./Components/SocialLinks";
 import pic from '../../logo.png';
 
 export default class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { posts: [] };
-    }
-
     render() {
         return (
             <div className="w-full lg:w-3/4 mx-auto flex flex-col justify-center items-center mb-8">
@@ -39,7 +34,7 @@ export default class Home extends Component {
                             Posts
                         <Link to="/posts" className="float-right no-underline text-blue hover:font-semibold">See All</Link>
                         </div>
-                        {window.data.blog.map((post, i=1) => {
+                        {window.data.posts.map((post, i=1) => {
                             i++;
                             if (i < 3) {
                                 return <Post key={post.id} post={post} />;
@@ -64,10 +59,26 @@ export default class Home extends Component {
     }
 
     componentWillMount() {
-        if (window.data.blog.length < 1) {
-            axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/master/data/blog.json')
+        if (window.data.posts.length < 1) {
+            axios.get('https://bbgz75j470.execute-api.us-east-1.amazonaws.com/prod/posts')
                 .then((response) => {
-                    window.data.blog = response.data.reverse();
+                    var resp = JSON.parse(response.data.body);
+                    window.data.posts = Object.keys(resp).map((key) => {
+                        let date = new Date(resp[key].firstPublishedAt);
+                        let item = {
+                            id: resp[key].id,
+                            title: resp[key].title,
+                            slug: resp[key].uniqueSlug,
+                            date: date.toLocaleString('en-us', { month: 'long' }) + ' ' + date.getDate() + ',' + date.getFullYear(),
+                            published: resp[key].firstPublishedAt
+                        };
+                        return item;
+                    })
+                    window.data.posts.sort((a, b) => {
+                        if (a.published > b.published) return -1;
+                        if (a.published < b.published) return 1;
+                        return 0;
+                    })
                     this.forceUpdate();
                 })
                 .catch((error) => {

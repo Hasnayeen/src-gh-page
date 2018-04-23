@@ -41,7 +41,7 @@ class App extends Component {
 
   componentWillMount = () => {
     axios({
-      // url: 'https://9x9ol3owx7.execute-api.us-east-1.amazonaws.com/prod/images',
+      url: 'https://9x9ol3owx7.execute-api.us-east-1.amazonaws.com/prod/images',
     })
       .then((response) => {
         this.setState({images: response.data});

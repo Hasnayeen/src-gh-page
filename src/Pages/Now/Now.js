@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export default class About extends Component {
     render() {
@@ -16,17 +17,22 @@ export default class About extends Component {
                         </div>
                     </div>
                     <div className="py-3 text-grey-darker">
-                        Updated: April 12, 2018
+                        Updated: April 23, 2018
                     </div>
                     <div className="py-6 text-grey-darker">
-                        I'm learning golang right now. Also learning about aws lambda. I'm making some lambda functions (<a href="https://github.com/hasnayeen/lambdas" className="no-underline text-blue-light">check here</a>) in golang for various purpose.
+                        I'm working on this open-source project right now, (<a href="https://github.com/iluminar/github" className="no-underline text-blue-light">check here</a>) working on some interesting issues.
                     </div>
                     <div className="py-6 text-grey-darker">
                         I'm also learning french just for fun. J'aime apprendre!
                     </div>
+                    {(Object.keys(window.data.reading).length > 0) ? (
                     <div className="py-6 text-grey-darker">
-                        I'm currently reading <a href="https://www.amazon.com/Quiet-Power-Introverts-World-Talking/dp/0307352153" target="new" className="no-underline text-blue-light">"Quiet" by Susan Cain</a>.
+                            I'm currently reading <a href={window.data.reading.current.url} target="new" className="no-underline text-blue-light">"{window.data.reading.current.title}"</a> by {window.data.reading.current.author}.
                     </div>
+                    ) : (
+                        <div></div>
+                    )
+                    }
                     <div className="py-6 text-grey-darker">
                         I'm very much into gardening right now. I'm trying to grow some vegetables and herbs (tomato, coriander, cucumber, red lettuce, rosemary etc.) in my very small 12 square feet balcony garden. I'm learning as much as I can about container & organic gardening.
                     </div>
@@ -36,5 +42,18 @@ export default class About extends Component {
                 </div>
             </div>
         )
+    }
+
+    componentWillMount() {
+        if (Object.keys(window.data.reading).length < 1) {
+            axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/master/data/reading.json')
+                .then((response) => {
+                    window.data.reading = response.data;
+                    this.forceUpdate();
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+        }
     }
 }
