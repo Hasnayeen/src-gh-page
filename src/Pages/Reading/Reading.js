@@ -51,7 +51,7 @@ export default class Reading extends Component {
 
     componentWillMount() {
         if (Object.keys(window.data.reading).length < 1) {
-            axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/master/data/reading.json')
+            axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/data/data/reading.json')
                 .then((response) => {
                     window.data.reading = response.data;
                     this.forceUpdate();

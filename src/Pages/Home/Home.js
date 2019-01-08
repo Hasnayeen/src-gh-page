@@ -86,7 +86,7 @@ export default class Home extends Component {
                 });
         }
         if (window.data.projects.length < 1) {
-            axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/master/data/projects.json')
+            axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/data/data/projects.json')
                 .then((response) => {
                     window.data.projects = response.data;
                     this.forceUpdate();

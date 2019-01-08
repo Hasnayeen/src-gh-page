@@ -98,7 +98,9 @@ class App extends Component {
     } else if (this.state.current < 0) {
       this.setState({current: this.state.images.length});
     }
-    document.body.style.backgroundImage = "url('" + this.state.images[this.state.current].urls.raw + "')";
+    let w = window.innerWidth
+    let h = window.innerHeight
+    document.body.style.backgroundImage = "url('" + this.state.images[this.state.current].urls.raw + "&w=" + w + "&h=" + h + "&fit=crop')";
     document.getElementById('photographer').setAttribute('href', this.state.images[this.state.current].user.links.html + "?utm_source=nehal_personal_website&utm_medium=referral");
     document.getElementById('photographer').textContent = this.state.images[this.state.current].user.name;
   }

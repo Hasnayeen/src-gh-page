@@ -16,7 +16,7 @@ export default class SocialLinks extends Component {
 
     componentDidMount() {
         if (window.data.socialLinks.length < 1) {
-            axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/master/data/social-link.json')
+            axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/data/data/social-link.json')
                 .then((response) => {
                     window.data.socialLinks = response.data;
                     this.forceUpdate();
