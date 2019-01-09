@@ -23,14 +23,14 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <main>
           <Route exact path="/" component={Home} />
           <Route path="/About" component={About} />
           <Route path="/Now" component={Now} />
           <Route path="/Posts" component={Posts} />
           <Route path="/Projects" component={Projects} />
           <Route path="/Reading" component={Reading} />
-        </div>
+        </main>
       </Router>
     );
   }
