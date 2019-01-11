@@ -8,17 +8,17 @@ export default class Posts extends Component {
     return (
       <div className='w-full lg:w-3/4 mx-auto flex flex-col justify-center items-center mb-8'>
         <div className='lg:h-16 h-8' />
-        <div className='w-5/6 xl:w-1/2 flex flex-col justify-center bg-grey-lightest py-4 lg:px-12 px-4 shadow text-grey-dark text-base leading-normal rounded'>
-          <div className='text-orange-light py-4 uppercase tracking-wide'>
-            <Link className='no-underline text-grey-darker absolute' to='/'>
+        <div className={(this.props.darkThemeActive ? 'bg-indigo-darkest text-white' : 'bg-grey-lighter text-grey-darker') + ' w-5/6 xl:w-1/2 flex flex-col justify-center bg-grey-lightest py-4 lg:px-12 px-4 shadow text-base leading-normal rounded'}>
+          <div className='text-orange-dark py-4 uppercase tracking-wide'>
+            <Link className={(this.props.darkThemeActive ? 'text-grey-light' : 'text-grey-darker') + ' no-underline absolute'} to='/' aria-label='Back to home'>
               <i className='fa fa-arrow-left' />
             </Link>
-            <div className='text-center' >
-                            All Posts
-            </div>
+            <h1 className='text-center text-base' >
+              All Posts
+            </h1>
           </div>
           {window.data.posts.map((post) =>
-            <Post key={post.id} post={post} />
+            <Post key={post.id} post={post} darkThemeActive={this.props.darkThemeActive} />
           )}
         </div>
       </div>

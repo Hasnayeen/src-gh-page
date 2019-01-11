@@ -4,9 +4,9 @@ import axios from 'axios'
 export default class SocialLinks extends Component {
   render () {
     return (
-      <div className='flex flex-row justify-around lg:px-8 py-8 w-full border-t border-red-lightest'>
+      <div className='flex flex-row justify-around lg:px-8 py-8 w-full'>
         {window.data.socialLinks.map((item) =>
-          <a key={item.id} className='shadow px-4 py-2 no-underline text-grey-darker text-3xl' href={item.url} aria-label={item.url}>
+          <a key={item.id} className={(this.props.darkThemeActive ? 'text-grey-lighter bg-indigo-darker' : 'text-grey-darker bg-grey-light') + ' rounded shadow px-4 py-2 no-underline text-3xl'} href={item.url} aria-label={item.url}>
             <i className={item.icon} />
           </a>
         )}

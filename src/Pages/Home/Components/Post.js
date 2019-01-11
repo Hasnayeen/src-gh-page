@@ -7,7 +7,7 @@ export default class Post extends Component {
         <a href={this.props.post.url} className='no-underline text-blue text-lg'>
           {this.props.post.title} →
         </a>
-        <div className='text-grey-darker text-xs font-medium pb-4'>
+        <div className={(this.props.darkThemeActive ? 'text-grey-lighter' : 'text-grey-darker') + ' text-xs font-medium pb-4'}>
           {this.props.post.date}
         </div>
       </div>

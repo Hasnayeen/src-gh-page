@@ -923,6 +923,10 @@ button,
   background-color: #ffebef;
 }
 
+.bg-inherit {
+  background-color: inherit;
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -1213,6 +1217,10 @@ button,
 
 .hover\:bg-pink-lightest:hover {
   background-color: #ffebef;
+}
+
+.hover\:bg-inherit:hover {
+  background-color: inherit;
 }
 
 .bg-bottom {
@@ -1571,6 +1579,10 @@ button,
   border-color: #ffebef;
 }
 
+.border-inherit {
+  border-color: inherit;
+}
+
 .hover\:border-transparent:hover {
   border-color: transparent;
 }
@@ -1861,6 +1873,10 @@ button,
 
 .hover\:border-pink-lightest:hover {
   border-color: #ffebef;
+}
+
+.hover\:border-inherit:hover {
+  border-color: inherit;
 }
 
 .rounded-none {
@@ -3562,19 +3578,19 @@ button,
 }
 
 .shadow {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 4px 0 rgba(101, 116, 205, .1);
 }
 
 .shadow-md {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 2px 4px 0 rgba(0, 0, 0, .08);
+  box-shadow: 0 4px 8px 0 rgba(101, 116, 205, .12), 0 2px 4px 0 rgba(101, 116, 205, .08);
 }
 
 .shadow-lg {
-  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
+  box-shadow: 0 15px 30px 0 rgba(101, 116, 205, .11), 0 5px 15px 0 rgba(101, 116, 205, .08);
 }
 
 .shadow-inner {
-  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, .06);
+  box-shadow: inset 0 2px 4px 0 rgba(101, 116, 205, .06);
 }
 
 .shadow-none {
@@ -3897,6 +3913,10 @@ button,
   color: #ffebef;
 }
 
+.text-inherit {
+  color: inherit;
+}
+
 .hover\:text-transparent:hover {
   color: transparent;
 }
@@ -4187,6 +4207,10 @@ button,
 
 .hover\:text-pink-lightest:hover {
   color: #ffebef;
+}
+
+.hover\:text-inherit:hover {
+  color: inherit;
 }
 
 .text-xs {
@@ -4857,6 +4881,10 @@ button,
     background-color: #ffebef;
   }
 
+  .sm\:bg-inherit {
+    background-color: inherit;
+  }
+
   .sm\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -5147,6 +5175,10 @@ button,
 
   .sm\:hover\:bg-pink-lightest:hover {
     background-color: #ffebef;
+  }
+
+  .sm\:hover\:bg-inherit:hover {
+    background-color: inherit;
   }
 
   .sm\:bg-bottom {
@@ -5505,6 +5537,10 @@ button,
     border-color: #ffebef;
   }
 
+  .sm\:border-inherit {
+    border-color: inherit;
+  }
+
   .sm\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -5795,6 +5831,10 @@ button,
 
   .sm\:hover\:border-pink-lightest:hover {
     border-color: #ffebef;
+  }
+
+  .sm\:hover\:border-inherit:hover {
+    border-color: inherit;
   }
 
   .sm\:rounded-none {
@@ -7496,19 +7536,19 @@ button,
   }
 
   .sm\:shadow {
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 4px 0 rgba(101, 116, 205, .1);
   }
 
   .sm\:shadow-md {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 2px 4px 0 rgba(0, 0, 0, .08);
+    box-shadow: 0 4px 8px 0 rgba(101, 116, 205, .12), 0 2px 4px 0 rgba(101, 116, 205, .08);
   }
 
   .sm\:shadow-lg {
-    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
+    box-shadow: 0 15px 30px 0 rgba(101, 116, 205, .11), 0 5px 15px 0 rgba(101, 116, 205, .08);
   }
 
   .sm\:shadow-inner {
-    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, .06);
+    box-shadow: inset 0 2px 4px 0 rgba(101, 116, 205, .06);
   }
 
   .sm\:shadow-none {
@@ -7823,6 +7863,10 @@ button,
     color: #ffebef;
   }
 
+  .sm\:text-inherit {
+    color: inherit;
+  }
+
   .sm\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -8113,6 +8157,10 @@ button,
 
   .sm\:hover\:text-pink-lightest:hover {
     color: #ffebef;
+  }
+
+  .sm\:hover\:text-inherit:hover {
+    color: inherit;
   }
 
   .sm\:text-xs {
@@ -8784,6 +8832,10 @@ button,
     background-color: #ffebef;
   }
 
+  .md\:bg-inherit {
+    background-color: inherit;
+  }
+
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -9074,6 +9126,10 @@ button,
 
   .md\:hover\:bg-pink-lightest:hover {
     background-color: #ffebef;
+  }
+
+  .md\:hover\:bg-inherit:hover {
+    background-color: inherit;
   }
 
   .md\:bg-bottom {
@@ -9432,6 +9488,10 @@ button,
     border-color: #ffebef;
   }
 
+  .md\:border-inherit {
+    border-color: inherit;
+  }
+
   .md\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -9722,6 +9782,10 @@ button,
 
   .md\:hover\:border-pink-lightest:hover {
     border-color: #ffebef;
+  }
+
+  .md\:hover\:border-inherit:hover {
+    border-color: inherit;
   }
 
   .md\:rounded-none {
@@ -11423,19 +11487,19 @@ button,
   }
 
   .md\:shadow {
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 4px 0 rgba(101, 116, 205, .1);
   }
 
   .md\:shadow-md {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 2px 4px 0 rgba(0, 0, 0, .08);
+    box-shadow: 0 4px 8px 0 rgba(101, 116, 205, .12), 0 2px 4px 0 rgba(101, 116, 205, .08);
   }
 
   .md\:shadow-lg {
-    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
+    box-shadow: 0 15px 30px 0 rgba(101, 116, 205, .11), 0 5px 15px 0 rgba(101, 116, 205, .08);
   }
 
   .md\:shadow-inner {
-    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, .06);
+    box-shadow: inset 0 2px 4px 0 rgba(101, 116, 205, .06);
   }
 
   .md\:shadow-none {
@@ -11750,6 +11814,10 @@ button,
     color: #ffebef;
   }
 
+  .md\:text-inherit {
+    color: inherit;
+  }
+
   .md\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -12040,6 +12108,10 @@ button,
 
   .md\:hover\:text-pink-lightest:hover {
     color: #ffebef;
+  }
+
+  .md\:hover\:text-inherit:hover {
+    color: inherit;
   }
 
   .md\:text-xs {
@@ -12711,6 +12783,10 @@ button,
     background-color: #ffebef;
   }
 
+  .lg\:bg-inherit {
+    background-color: inherit;
+  }
+
   .lg\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -13001,6 +13077,10 @@ button,
 
   .lg\:hover\:bg-pink-lightest:hover {
     background-color: #ffebef;
+  }
+
+  .lg\:hover\:bg-inherit:hover {
+    background-color: inherit;
   }
 
   .lg\:bg-bottom {
@@ -13359,6 +13439,10 @@ button,
     border-color: #ffebef;
   }
 
+  .lg\:border-inherit {
+    border-color: inherit;
+  }
+
   .lg\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -13649,6 +13733,10 @@ button,
 
   .lg\:hover\:border-pink-lightest:hover {
     border-color: #ffebef;
+  }
+
+  .lg\:hover\:border-inherit:hover {
+    border-color: inherit;
   }
 
   .lg\:rounded-none {
@@ -15350,19 +15438,19 @@ button,
   }
 
   .lg\:shadow {
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 4px 0 rgba(101, 116, 205, .1);
   }
 
   .lg\:shadow-md {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 2px 4px 0 rgba(0, 0, 0, .08);
+    box-shadow: 0 4px 8px 0 rgba(101, 116, 205, .12), 0 2px 4px 0 rgba(101, 116, 205, .08);
   }
 
   .lg\:shadow-lg {
-    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
+    box-shadow: 0 15px 30px 0 rgba(101, 116, 205, .11), 0 5px 15px 0 rgba(101, 116, 205, .08);
   }
 
   .lg\:shadow-inner {
-    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, .06);
+    box-shadow: inset 0 2px 4px 0 rgba(101, 116, 205, .06);
   }
 
   .lg\:shadow-none {
@@ -15677,6 +15765,10 @@ button,
     color: #ffebef;
   }
 
+  .lg\:text-inherit {
+    color: inherit;
+  }
+
   .lg\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -15967,6 +16059,10 @@ button,
 
   .lg\:hover\:text-pink-lightest:hover {
     color: #ffebef;
+  }
+
+  .lg\:hover\:text-inherit:hover {
+    color: inherit;
   }
 
   .lg\:text-xs {
@@ -16638,6 +16734,10 @@ button,
     background-color: #ffebef;
   }
 
+  .xl\:bg-inherit {
+    background-color: inherit;
+  }
+
   .xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -16928,6 +17028,10 @@ button,
 
   .xl\:hover\:bg-pink-lightest:hover {
     background-color: #ffebef;
+  }
+
+  .xl\:hover\:bg-inherit:hover {
+    background-color: inherit;
   }
 
   .xl\:bg-bottom {
@@ -17286,6 +17390,10 @@ button,
     border-color: #ffebef;
   }
 
+  .xl\:border-inherit {
+    border-color: inherit;
+  }
+
   .xl\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -17576,6 +17684,10 @@ button,
 
   .xl\:hover\:border-pink-lightest:hover {
     border-color: #ffebef;
+  }
+
+  .xl\:hover\:border-inherit:hover {
+    border-color: inherit;
   }
 
   .xl\:rounded-none {
@@ -19277,19 +19389,19 @@ button,
   }
 
   .xl\:shadow {
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 4px 0 rgba(101, 116, 205, .1);
   }
 
   .xl\:shadow-md {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 2px 4px 0 rgba(0, 0, 0, .08);
+    box-shadow: 0 4px 8px 0 rgba(101, 116, 205, .12), 0 2px 4px 0 rgba(101, 116, 205, .08);
   }
 
   .xl\:shadow-lg {
-    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
+    box-shadow: 0 15px 30px 0 rgba(101, 116, 205, .11), 0 5px 15px 0 rgba(101, 116, 205, .08);
   }
 
   .xl\:shadow-inner {
-    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, .06);
+    box-shadow: inset 0 2px 4px 0 rgba(101, 116, 205, .06);
   }
 
   .xl\:shadow-none {
@@ -19604,6 +19716,10 @@ button,
     color: #ffebef;
   }
 
+  .xl\:text-inherit {
+    color: inherit;
+  }
+
   .xl\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -19894,6 +20010,10 @@ button,
 
   .xl\:hover\:text-pink-lightest:hover {
     color: #ffebef;
+  }
+
+  .xl\:hover\:text-inherit:hover {
+    color: inherit;
   }
 
   .xl\:text-xs {

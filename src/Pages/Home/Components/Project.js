@@ -7,7 +7,7 @@ export default class Project extends Component {
         <a href={this.props.project.url} className='no-underline text-blue text-lg'>
           {this.props.project.name} →
         </a>
-        <div className='text-grey-darker text-xs font-medium pb-4'>
+        <div className={(this.props.darkThemeActive ? 'text-grey-lighter' : 'text-grey-darker') + ' text-xs font-medium pb-4'}>
           {this.props.project.desc}
         </div>
       </div>
