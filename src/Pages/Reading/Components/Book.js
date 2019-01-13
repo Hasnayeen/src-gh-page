@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Post extends Component {
+export default class Book extends Component {
   render () {
     return (
       <div className='py-4 border-t' key={this.props.book.id}>

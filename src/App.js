@@ -12,6 +12,8 @@ import About from './Pages/About/About'
 import Now from './Pages/Now/Now'
 import Reading from './Pages/Reading/Reading'
 import ThemeSwitcher from './Components/ThemeSwitcher'
+import Journal from './Pages/Journal/Journal'
+import Post from './Pages/Journal/Components/Post'
 
 class App extends Component {
   constructor(props) {
@@ -27,12 +29,14 @@ class App extends Component {
       <Router>
         <main>
           <ThemeSwitcher darkThemeActive={this.state.darkThemeActive} toggleTheme={this.toggleTheme}></ThemeSwitcher>
-          <Route exact path="/" render={(props) => <Home darkThemeActive={this.state.darkThemeActive} {...props} />} />
-          <Route path="/About" render={(props) => <About darkThemeActive={this.state.darkThemeActive} {...props} />} />
-          <Route path="/Now" render={(props) => <Now darkThemeActive={this.state.darkThemeActive} {...props} />} />
-          <Route path="/Posts" render={(props) => <Posts darkThemeActive={this.state.darkThemeActive} {...props} />} />
-          <Route path="/Projects" render={(props) => <Projects darkThemeActive={this.state.darkThemeActive} {...props} />} />
-          <Route path="/Reading" render={(props) => <Reading darkThemeActive={this.state.darkThemeActive} {...props} />} />
+          <Route exact path='/' render={(props) => <Home darkThemeActive={this.state.darkThemeActive} {...props} />} />
+          <Route path='/About' render={(props) => <About darkThemeActive={this.state.darkThemeActive} {...props} />} />
+          <Route path='/Now' render={(props) => <Now darkThemeActive={this.state.darkThemeActive} {...props} />} />
+          <Route path='/Posts' render={(props) => <Posts darkThemeActive={this.state.darkThemeActive} {...props} />} />
+          <Route path='/Projects' render={(props) => <Projects darkThemeActive={this.state.darkThemeActive} {...props} />} />
+          <Route path='/Reading' render={(props) => <Reading darkThemeActive={this.state.darkThemeActive} {...props} />} />
+          <Route path='/Journal/:slug' render={(props) => <Post darkThemeActive={this.state.darkThemeActive} {...props} />} />
+          <Route path='/Journal-list' render={(props) => <Journal darkThemeActive={this.state.darkThemeActive} {...props} />} />
         </main>
       </Router>
     )

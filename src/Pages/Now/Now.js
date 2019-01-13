@@ -23,7 +23,7 @@ export default class About extends Component {
             </div>
           </div>
 
-          {/* Now page content loaded from giub */}
+          {/* Now page content loaded from github */}
           {parse(this.state.now)}
 
           {(Object.keys(window.data.reading).length > 0) ? (

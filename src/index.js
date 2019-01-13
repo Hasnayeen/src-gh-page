@@ -10,6 +10,7 @@ window.data = {
   'projects': [],
   'reading': {},
   'socialLinks': [],
+  'journal': [],
   'darkThemeActive': false
 }
 

@@ -26,6 +26,8 @@ export default class Home extends Component {
             <Link to='/reading' className='no-underline py-4 text-inherit hover:border-orange-dark border-b border-transparent'>Reading</Link>
             <span className='border-r border-orange-lighter py-4' />
             <Link to='/now' className='no-underline py-4 text-inherit hover:border-orange-dark border-b border-transparent'>Now</Link>
+            <span className='border-r border-orange-lighter py-4' />
+            <Link to='/journal-list' className='no-underline py-4 text-inherit hover:border-orange-dark border-b border-transparent'>Journal</Link>
           </div>
           <div className='w-full pt-8 border-t border-orange-lighter'>
             <div className={(this.props.darkThemeActive ? 'text-grey-lighter' : 'text-grey-darker') + ' text-sm pb-1'}>
@@ -39,6 +41,7 @@ export default class Home extends Component {
               if (i < 3) {
                 return <Post key={post.id} post={post} darkThemeActive={this.props.darkThemeActive} />
               }
+              return false
             })}
           </div>
           <div className='w-full pt-8 border-t border-orange-lighter'>
@@ -53,6 +56,7 @@ export default class Home extends Component {
               if (i < 3) {
                 return <Project key={project.step} project={project} darkThemeActive={this.props.darkThemeActive} />
               }
+              return false
             })}
           </div>
         </div>

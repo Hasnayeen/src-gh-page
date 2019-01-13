@@ -6,7 +6,12 @@ export default class About extends Component {
     return (
       <div className='w-full lg:w-3/4 mx-auto flex flex-col justify-center items-center mb-8'>
         <div className='lg:h-16 h-8' />
-        <div className={(this.props.darkThemeActive ? 'bg-indigo-darkest text-white' : 'bg-grey-lighter text-grey-darker') + ' w-5/6 xl:w-1/2 flex flex-col justify-center bg-grey-lightest py-8 lg:px-12 px-4 shadow text-base leading-normal rounded'}>
+        <div className={(this.props.darkThemeActive ? 'bg-indigo-darkest text-white' : 'bg-grey-lighter text-grey-darker') + ' w-5/6 xl:w-1/2 flex flex-col justify-center bg-grey-lightest pt-6 pb-8 lg:px-12 px-4 shadow text-base leading-normal rounded'}>
+          <div className='flex flex-row justify-end'>
+            <div className={(this.props.darkThemeActive ? 'bg-indigo-dark' : 'bg-indigo-light text-grey-lighter') + ' rounded-full px-2 text-sm'}>
+              For Hire
+            </div>
+          </div>
           <div className='text-orange-dark py-4 uppercase tracking-wide font-semibold'>
             <Link className='no-underline text-grey-darker absolute' to='/'>
               <i className='fa fa-arrow-left' />
