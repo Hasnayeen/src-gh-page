@@ -36,12 +36,9 @@ export default class Home extends Component {
               </span>
               <Link to='/posts' className='float-right no-underline text-blue hover:font-semibold'>See All</Link>
             </div>
-            {window.data.posts.map((post, i = 1) => {
+            {window.data.blog.map((post, i = 1) => {
               i++
-              if (i < 3) {
-                return <Post key={post.id} post={post} darkThemeActive={this.props.darkThemeActive} />
-              }
-              return false
+              return <Post key={post.id} post={post} darkThemeActive={this.props.darkThemeActive} />
             })}
           </div>
           <div className='w-full pt-8 border-t border-orange-lighter'>
@@ -65,26 +62,10 @@ export default class Home extends Component {
   }
 
   componentWillMount () {
-    if (window.data.posts.length < 1) {
-      axios.get('https://bbgz75j470.execute-api.us-east-1.amazonaws.com/prod/posts')
+    if (window.data.blog.length < 1) {
+      axios.get('https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/data/data/blog.json')
         .then((response) => {
-          var resp = JSON.parse(response.data.body)
-          window.data.posts = Object.keys(resp).map((key) => {
-            let date = new Date(resp[key].firstPublishedAt)
-            let item = {
-              id: resp[key].id,
-              title: resp[key].title,
-              slug: resp[key].uniqueSlug,
-              date: date.toLocaleString('en-us', { month: 'long' }) + ' ' + date.getDate() + ',' + date.getFullYear(),
-              published: resp[key].firstPublishedAt
-            }
-            return item
-          })
-          window.data.posts.sort((a, b) => {
-            if (a.published > b.published) return -1
-            if (a.published < b.published) return 1
-            return 0
-          })
+          window.data.blog = response.data
           this.forceUpdate()
         })
         .catch((error) => {
