@@ -9,6 +9,7 @@ window.data = {
   'posts': [],
   'projects': [],
   'reading': {},
+  'listening': {},
   'socialLinks': [],
   'journal': [],
   'darkThemeActive': false

@@ -11,6 +11,8 @@ import Projects from './Pages/Projects/Projects'
 import About from './Pages/About/About'
 import Now from './Pages/Now/Now'
 import Reading from './Pages/Reading/Reading'
+import Listening from './Pages/Listening/Listening'
+import Podcast from './Pages/Listening/Components/Podcast'
 import ThemeSwitcher from './Components/ThemeSwitcher'
 import Journal from './Pages/Journal/Journal'
 import Post from './Pages/Journal/Components/Post'
@@ -35,6 +37,8 @@ class App extends Component {
           <Route path='/Posts' render={(props) => <Posts darkThemeActive={this.state.darkThemeActive} {...props} />} />
           <Route path='/Projects' render={(props) => <Projects darkThemeActive={this.state.darkThemeActive} {...props} />} />
           <Route path='/Reading' render={(props) => <Reading darkThemeActive={this.state.darkThemeActive} {...props} />} />
+          <Route path='/Listening' render={(props) => <Listening darkThemeActive={this.state.darkThemeActive} {...props} />} />
+          <Route path='/Podcasts/:podcast' render={(props) => <Podcast darkThemeActive={this.state.darkThemeActive} {...props} />} />
           <Route path='/Journal/:slug' render={(props) => <Post darkThemeActive={this.state.darkThemeActive} {...props} />} />
           <Route path='/Journal-list' render={(props) => <Journal darkThemeActive={this.state.darkThemeActive} {...props} />} />
         </main>

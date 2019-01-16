@@ -28,6 +28,8 @@ export default class Home extends Component {
             <Link to='/now' className='no-underline py-4 text-inherit hover:border-orange-dark border-b border-transparent'>Now</Link>
             <span className='border-r border-orange-lighter py-4' />
             <Link to='/journal-list' className='no-underline py-4 text-inherit hover:border-orange-dark border-b border-transparent'>Journal</Link>
+            <span className='border-r border-orange-lighter py-4' />
+            <Link to='/listening' className='no-underline py-4 text-inherit hover:border-orange-dark border-b border-transparent'>Listening</Link>
           </div>
           <div className='w-full pt-8 border-t border-orange-lighter'>
             <div className={(this.props.darkThemeActive ? 'text-grey-lighter' : 'text-grey-darker') + ' text-sm pb-1'}>
