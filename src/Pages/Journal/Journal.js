@@ -7,10 +7,10 @@ export default class Journal extends Component {
     const posts = (Object.keys(window.data.journal).length > 0) ? (
       window.data.journal.map((post) =>
         <div className='py-4 border-t' key={post.sha}>
-          <Link className={(this.props.darkThemeActive ? 'text-blue' : 'text-indigo') + ' no-underline text-xl font-semibold'} to={'/Journal/' + post.path}>
-            {post.path.split('~')[1]}
+          <Link className={(this.props.darkThemeActive ? 'text-blue' : 'text-indigo') + ' no-underline text-xl font-semibold'} to={'/Journal/' + post.name}>
+            {post.name.split('~')[1]}
           </Link>
-          <div className={(this.props.darkThemeActive ? 'text-white' : 'text-indigo-darker') + ' text-sm pl-1'}>{post.path.split('~')[0]}</div>
+          <div className={(this.props.darkThemeActive ? 'text-white' : 'text-indigo-darker') + ' text-sm pl-1'}>{post.name.split('~')[0]}</div>
         </div>
       )
     ) : (
@@ -41,9 +41,10 @@ export default class Journal extends Component {
 
   componentDidMount () {
     if (window.data.journal.length < 1) {
-      axios.get('https://api.github.com/repos/Hasnayeen/hasnayeen.github.io/git/trees/9c93be45773cf8d8e9a315bb357ddf769929a401')
+      axios.get('https://api.github.com/repos/Hasnayeen/hasnayeen.github.io/contents/data/journal?ref=data')
         .then((response) => {
-          window.data.journal = response.data.tree
+          console.log(response)
+          window.data.journal = response.data.reverse()
           this.forceUpdate()
         })
         .catch((error) => {
