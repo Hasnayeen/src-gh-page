@@ -6,6 +6,12 @@ import Project from './Components/Project'
 import SocialLinks from './Components/SocialLinks'
 
 export default class Home extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {showDropdownMenu: false}
+    this.toggleDropdownMenu = this.toggleDropdownMenu.bind(this)
+  }
+
   render () {
     return (
       <div className='w-full lg:w-3/4 mx-auto flex flex-col justify-center items-center mb-8'>
@@ -23,13 +29,21 @@ export default class Home extends Component {
           <div className={(this.props.darkThemeActive ? 'text-grey-lighter' : 'text-grey-darker') + ' flex flex-row justify-around px-8 w-full border-t border-orange-lighter'}>
             <Link to='/about' className='no-underline py-4 text-inherit hover:border-orange-dark border-b border-transparent'>About</Link>
             <span className='border-l border-orange-lighter py-4' />
-            <Link to='/reading' className='no-underline py-4 text-inherit hover:border-orange-dark border-b border-transparent'>Reading</Link>
-            <span className='border-r border-orange-lighter py-4' />
             <Link to='/now' className='no-underline py-4 text-inherit hover:border-orange-dark border-b border-transparent'>Now</Link>
             <span className='border-r border-orange-lighter py-4' />
-            <Link to='/journal-list' className='no-underline py-4 text-inherit hover:border-orange-dark border-b border-transparent'>Journal</Link>
-            <span className='border-r border-orange-lighter py-4' />
-            <Link to='/listening' className='no-underline py-4 text-inherit hover:border-orange-dark border-b border-transparent'>Listening</Link>
+            <div className='py-4 text-inherit hover:border-orange-dark border-b border-transparent cursor-pointer' onClick={this.toggleDropdownMenu}>
+              More
+            </div>
+          </div>
+          <div className='relative w-full'>
+            { this.state.showDropdownMenu &&
+              <div className={(this.props.darkThemeActive ? 'bg-grey-darkest' : 'bg-grey-lightest') + ' absolute pin-r pin-t mt-1 rounded shadow-lg z-20 flex flex-col'}>
+                <a href='/docs/Résumé of Nehal Hasnayeen.pdf' className='no-underline px-6 py-4 hover:border-orange-dark border-l border-transparent text-inherit'>Résumé</a>
+                <Link to='/journal-list' className='no-underline px-6 py-4 hover:border-orange-dark border-l border-transparent text-inherit'>Journal</Link>
+                <Link to='/reading' className='no-underline px-6 py-4 hover:border-orange-dark border-l border-transparent text-inherit'>Reading</Link>
+                <Link to='/listening' className='no-underline px-6 py-4 hover:border-orange-dark border-l border-transparent text-inherit'>Listening</Link>
+              </div>
+            }
           </div>
           <div className='w-full pt-8 border-t border-orange-lighter'>
             <div className={(this.props.darkThemeActive ? 'text-grey-lighter' : 'text-grey-darker') + ' text-sm pb-1'}>
@@ -84,5 +98,9 @@ export default class Home extends Component {
           console.log(error)
         })
     }
+  }
+
+  toggleDropdownMenu () {
+    this.setState({showDropdownMenu: !this.state.showDropdownMenu})
   }
 }

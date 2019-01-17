@@ -43,7 +43,6 @@ export default class Journal extends Component {
     if (window.data.journal.length < 1) {
       axios.get('https://api.github.com/repos/Hasnayeen/hasnayeen.github.io/contents/data/journal?ref=data')
         .then((response) => {
-          console.log(response)
           window.data.journal = response.data.reverse()
           this.forceUpdate()
         })
