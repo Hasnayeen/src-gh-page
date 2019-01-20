@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import convert from 'xml-js'
 import Episode from './Episode'
 
 let title = ''
@@ -28,7 +27,7 @@ export default class Podcast extends Component {
 
           <div className='flex flex-col items-center'>
             {this.state.episodes.map((episode) => {
-              return <Episode darkThemeActive={this.props.darkThemeActive} key={episode.guid._text} episode={episode} />
+              return <Episode darkThemeActive={this.props.darkThemeActive} key={episode.episode} episode={episode} />
             })}
           </div>
         </div>
@@ -54,9 +53,9 @@ export default class Podcast extends Component {
 
   async getEpisodeList () {
     try {
-      const response = await axios.get(window.data.listening[parseInt(this.props.match.params.podcast, 10) - 1].rss)
-      const convertedData = convert.xml2js(response.data, { compact: true, spaces: 4 })
-      this.setState({episodes: convertedData.rss.channel.item})
+      const url = window.data.listening[parseInt(this.props.match.params.podcast, 10) - 1].rss
+      const response = await axios.get('https://r5225i0zwj.execute-api.us-east-1.amazonaws.com/prod/rss?url=' + url)
+      this.setState({episodes: response.data.channel.items})
     } catch (error) {
       console.log(error)
     }
