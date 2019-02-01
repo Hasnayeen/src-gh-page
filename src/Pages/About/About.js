@@ -31,11 +31,11 @@ export default class About extends Component {
             I build simple & functional custom web applications with rich UX.
           </div>
           <div className='py-3'>
-            I work on both backend (php7) and frontend (es6) mainly on Laravel & Vue/React stack. I follow TDD approach on both end for professional work. I use linux machine and docker based tools for local development and production. <a href='/projects' className='no-underline text-blue-light'>Projects</a>
+            I work on both backend (php7) and frontend (es6) mainly on Laravel & Vue/React stack. I follow TDD approach on both end for professional work. I use linux machine and docker based tools for local development and production. <a href='/projects' className='no-underline text-blue-light'>Check out my projects</a>
           </div>
           <div className='py-3'>
                 I like to learn new stuff & experiment. I'm exploring golang, graphql and serverless technology and looking forward to learn React Native.
-            <a href='/now' className='no-underline text-blue-light'> Now?</a>
+            <a href='/now' className='no-underline text-blue-light'> What I'm doing now?</a>
           </div>
           <div className='pt-4 text-left text-xl font-medium'>
             Approach to Work
@@ -51,6 +51,9 @@ export default class About extends Component {
               </li>
               <li>
                 code readibility over performance
+              </li>
+              <li>
+                TDD based development cycle
               </li>
               <li>
                 creative freedom in work
@@ -80,6 +83,9 @@ export default class About extends Component {
               </li>
             </ul>
           </div>
+          <div className='py-3'>
+            My ideal workplace would have remote working option, scheduling flexibility and effective text based team communication.
+          </div>
           <div className='pt-4 text-left text-xl font-medium'>
             Work Timeline
           </div>
@@ -93,13 +99,13 @@ export default class About extends Component {
             <span className='font-bold text-lg'>→</span> 2015: Dedicated few months on learning Laravel & VueJS full time to become full stack developer.
           </div>
           <div className='py-3'>
-            <span className='font-bold text-lg'>→</span> 2016: Worked for P1, Bashundhara Group. Built and maintained an API microservice for media management to serve several web and mobile application frontend using laravel and aws services.
+            <span className='font-bold text-lg'>→</span> 2016-2017: Worked for P1, Bashundhara Group. Built and maintained an API microservice for media management to serve several web and mobile application frontend using laravel and aws services.
           </div>
           <div className='py-3'>
-            <span className='font-bold text-lg'>→</span> 2017: Worked for Small Success LLC (USA). Built and integrated a Q/A module in a existing application built on Laravel & VueJS stack.
+            <span className='font-bold text-lg'>→</span> 2017-2018: Worked for Small Success LLC (USA). Built and integrated a Q/A module in a existing application built on Laravel & VueJS stack.
           </div>
           <div className='py-3'>
-            <span className='font-bold text-lg'>→</span> 2018: Exploring golang, graphql and aws lambda (serverless tech).
+            <span className='font-bold text-lg'>→</span> 2018: Exploring golang and aws lambda (serverless tech). <a href='https://github.com/Hasnayeen/lambdas' className='no-underline text-blue-light'> Check my lambda functions</a>
           </div>
           <div className='pt-8 mt-4 text-left text-xl font-medium'>
             Personal
