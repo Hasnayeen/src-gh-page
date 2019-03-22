@@ -15,7 +15,7 @@ export default class Reading extends Component {
 
     const current = (Object.keys(window.data.reading).length > 0) ? (
       <div>
-        <a className={(this.props.darkThemeActive ? 'text-grey-lighter' : 'text-grey-darker') + ' no-underline text-xl font-semibold'} href={window.data.reading.current.url} target='_blank'>
+        <a className={(this.props.darkThemeActive ? 'text-grey-lighter' : 'text-grey-darker') + ' no-underline text-xl font-semibold'} href={window.data.reading.current.url} rel='noreferrer noopener' target='_blank'>
           {window.data.reading.current.title}
         </a>
         <div className='text-xs'>

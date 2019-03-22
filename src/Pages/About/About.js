@@ -1,14 +1,33 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import ForHire from './Components/ForHire'
+import axios from 'axios';
 
 export default class About extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      modalShown: false,
+      availability: {}
+    }
+    this.toggleAvailabilityModal = this.toggleAvailabilityModal.bind(this)
+  }
+  
   render () {
     return (
       <div className='w-full lg:w-3/4 mx-auto flex flex-col justify-center items-center mb-8'>
+        {this.state.modalShown &&
+          <ForHire darkThemeActive={this.props.darkThemeActive} availability={this.state.availability} />
+        }
+
+        <div className={(this.state.modalShown ? '' : 'hidden') + ' fixed pin max-h-screen bg-black opacity-50 z-0'} onClick={this.toggleAvailabilityModal}></div>
+
         <div className='lg:h-16 h-8' />
+
         <div className={(this.props.darkThemeActive ? 'bg-indigo-darkest text-white' : 'bg-grey-lighter text-grey-darker') + ' w-5/6 xl:w-1/2 flex flex-col justify-center bg-grey-lightest pt-6 pb-8 lg:px-12 px-4 shadow text-base leading-normal rounded'}>
           <div className='flex flex-row justify-end'>
-            <div className={(this.props.darkThemeActive ? 'bg-indigo-dark' : 'bg-indigo-light text-grey-lighter') + ' rounded-full px-2 text-sm'}>
+            <div className={(this.props.darkThemeActive ? 'bg-indigo-dark' : 'bg-indigo-light text-grey-lighter') + ' rounded-full px-2 text-sm cursor-pointer'} onClick={this.toggleAvailabilityModal}>
               For Hire
             </div>
           </div>
@@ -117,4 +136,21 @@ export default class About extends Component {
       </div>
     )
   }
+
+  toggleAvailabilityModal () {
+    this.setState({modalShown: !this.state.modalShown})
+  }
+
+  componentDidMount = () => {
+    axios({
+      url: 'https://raw.githubusercontent.com/Hasnayeen/hasnayeen.github.io/data/data/availability.json'
+    })
+      .then((response) => {
+        this.setState({availability: response.data})
+      })
+      .catch((error) => {
+        console.error(error.response.message)
+      })
+  }
+  
 }
